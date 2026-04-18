@@ -534,7 +534,7 @@
           </div>
           <div class="pc-ev-left">
             <div class="pc-eyebrow" style="margin-bottom:12px;">while you're out →</div>
-            <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1;margin:0 0 18px;font-weight:400;color:var(--palm-deep);">Proof, <em style="font-style:italic;color:var(--clay);">every visit.</em></h2>
+            <h2 style="font-family:'DM Serif Display',serif;font-size:48px;line-height:1;margin:0 0 18px;font-weight:400;color:var(--cream);">Proof, <em style="font-style:italic;color:var(--clay);">every visit.</em></h2>
             <p style="font-size:16px;max-width:48ch;opacity:0.9;margin:0 0 12px;">What people actually want when they're not home isn't watering — it's <em>knowing.</em> So every single visit, I photograph each plant, jot what I did, and text you the log before I leave.</p>
             <p style="font-family:'Caveat',cursive;font-size:22px;color:var(--clay);margin:12px 0 0;">you see exactly what happened, on the day it happened.</p>
           </div>
