@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Alicia & Plants — Daytona Beach boutique plant care</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Caveat:wght@400;600&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5ecd9;
+    --sand-2: #ecdcb8;
+    --sand-3: #e4cf9d;
+    --cream: #fbf4e3;
+    --ink: #1f3a2e;
+    --palm: #265641;
+    --palm-deep: #163527;
+    --leaf-fill: #3b7d5e;
+    --leaf-shade: #1f4a37;
+    --clay: #c76a45;
+    --clay-shade: #8f4928;
+    --clay-soft: #e0906d;
+    --sky: #a7c9d6;
+    --sky-deep: #6a9fb0;
+    --bloom: #d43d5b;
+    --bloom-shade: #a52544;
+    --hibiscus: #d43d5b;
+    --sun: #e9b64a;
+    --shadow: 0 2px 0 rgba(31,58,46,0.12);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  svg { display: block; }
+  a { color: inherit; }
+  .ill { color: var(--palm); }
+  /* illustrations now carry their own fills + stroke colors */
+
+  /* variation switcher */
+  #variations > section { display: none; }
+  #variations > section.active { display: block; }
+
+  /* tweaks panel */
+  #tweaks {
+    position: fixed; right: 20px; bottom: 20px;
+    background: var(--cream);
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    box-shadow: 4px 4px 0 var(--palm);
+    z-index: 9999;
+    display: none;
+    min-width: 220px;
+  }
+  #tweaks.on { display: block; }
+  #tweaks h4 { margin: 0 0 8px; font-family: "DM Serif Display", serif; font-size: 18px; font-weight: 400; color: var(--palm); }
+  #tweaks .opt { display: block; padding: 6px 0; cursor: pointer; }
+  #tweaks .opt input { margin-right: 8px; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div id="variations">
+  <section id="v-postcard" class="active"></section>
+  <section id="v-editorial"></section>
+  <section id="v-journal"></section>
+</div>
+
+<div id="tweaks">
+  <h4>Tweaks</h4>
+  <div>
+    <label class="opt"><input type="radio" name="variant" value="postcard" checked> Postcard scrapbook</label>
+    <label class="opt"><input type="radio" name="variant" value="editorial"> Editorial magazine</label>
+    <label class="opt"><input type="radio" name="variant" value="journal"> Field journal</label>
+  </div>
+  <hr style="border:none;border-top:1px dashed var(--ink);opacity:0.3;margin:12px 0;">
+  <div style="font-size:11px;opacity:0.7;line-height:1.4;">
+    Switch between three homepage directions.
+    Same content, three visual personalities.
+  </div>
+</div>
+
+<script src="illustrations.js?v=3"></script>
+<script src="vpostcard.js?v=3"></script>
+<script src="veditorial.js?v=3"></script>
+<script src="vjournal.js?v=3"></script>
+<script>
+  // Tweak defaults (persistable)
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "variant": "postcard"
+  }/*EDITMODE-END*/;
+
+  const SECTIONS = {
+    postcard: document.getElementById('v-postcard'),
+    editorial: document.getElementById('v-editorial'),
+    journal: document.getElementById('v-journal'),
+  };
+
+  function setVariant(v) {
+    Object.entries(SECTIONS).forEach(([k, el]) => el.classList.toggle('active', k === v));
+    document.querySelectorAll('#tweaks input[name=variant]').forEach(r => r.checked = r.value === v);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  setVariant(TWEAK_DEFAULTS.variant || 'postcard');
+
+  document.querySelectorAll('#tweaks input[name=variant]').forEach(r => {
+    r.addEventListener('change', e => {
+      setVariant(e.target.value);
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { variant: e.target.value } }, '*');
+    });
+  });
+
+  // edit mode protocol
+  window.addEventListener('message', e => {
+    if (!e.data) return;
+    if (e.data.type === '__activate_edit_mode') document.getElementById('tweaks').classList.add('on');
+    if (e.data.type === '__deactivate_edit_mode') document.getElementById('tweaks').classList.remove('on');
+  });
+  window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+</script>
+
+</body>
+</html>
