@@ -416,6 +416,71 @@
         flex-wrap: wrap; gap: 20px;
       }
       .pc-footer .wave-ill { color: var(--sky-deep); opacity: 0.5; margin-top: 20px; }
+
+      /* ----- Responsive ----- */
+      @media (max-width: 860px) {
+        .pc-wrap { padding: 20px 22px 60px; }
+        .pc-nav { flex-wrap: wrap; gap: 14px; }
+        .pc-nav ul { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 18px; }
+        .pc-hero { grid-template-columns: 1fr; padding: 40px 28px; gap: 28px; }
+        .pc-hero::before { display: none; }
+        .pc-hero h1 { font-size: 52px; }
+        .pc-hero p.lead { font-size: 16px; }
+        .pc-hero-right { height: 300px; }
+        .pc-hero-right .big-ill { width: 240px; height: 240px; }
+        .pc-postmark { display: none; }
+        .pc-stamp { top: -12px; right: 16px; width: 76px; height: 92px; }
+        .pc-ev-inner { grid-template-columns: 1fr; padding: 40px 24px; gap: 28px; }
+        .pc-strip { flex-wrap: wrap; white-space: normal; font-size: 16px; gap: 10px 14px; justify-content: center; padding: 20px 16px; }
+        .pc-strip > span:not(.dot) { align-items: center; text-align: center; }
+        .pc-section-head { flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 28px; }
+        .pc-section-head h2 { font-size: 42px; }
+        .pc-card-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+        .pc-about { grid-template-columns: 1fr; padding: 44px 28px; gap: 32px; margin-top: 72px; }
+        .pc-about h2 { font-size: 38px; }
+        .pc-steps { grid-template-columns: 1fr 1fr; }
+        .pc-step { border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+        .pc-step:nth-child(2n) { border-right: none; }
+        .pc-step:nth-last-child(-n+2) { border-bottom: none; }
+        .pc-faq { grid-template-columns: 1fr; gap: 24px; margin-top: 72px; }
+        .pc-faq h2 { font-size: 40px; }
+        .pc-final { padding: 56px 28px; margin-top: 72px; }
+        .pc-final h2 { font-size: 48px; }
+        .pc-final .deco-l, .pc-final .deco-r { display: none; }
+        .pc-footer { flex-direction: column; align-items: flex-start; gap: 10px; }
+      }
+      @media (max-width: 540px) {
+        .pc-wrap { padding: 16px 14px 48px; }
+        .pc-nav ul { gap: 14px; font-size: 13px; }
+        .pc-logo { font-size: 22px; }
+        .pc-cta { padding: 9px 14px; font-size: 13px; }
+        .pc-hero { padding: 32px 20px; }
+        .pc-hero h1 { font-size: 38px; margin-bottom: 18px; }
+        .pc-hero-right { height: 260px; }
+        .pc-hero-right .big-ill { width: 200px; height: 200px; }
+        .pc-hero-right .accent-1, .pc-hero-right .accent-2, .pc-hero-right .handwritten { display: none; }
+        .pc-stamp { width: 64px; height: 76px; right: 12px; }
+        .pc-stamp .sun-ill { width: 26px; height: 26px; }
+        .pc-stamp small { font-size: 9px; }
+        .pc-ev-inner { padding: 32px 20px; }
+        .pc-ev-right { grid-template-columns: 1fr; gap: 10px; }
+        .pc-ev-photo { transform: none !important; }
+        .pc-strip { font-size: 15px; padding: 16px 12px; }
+        .pc-strip em { font-size: 15px; }
+        .pc-card-grid { grid-template-columns: 1fr; }
+        .pc-card { transform: none !important; min-height: 0; padding: 24px 20px 22px; }
+        .pc-section-head h2 { font-size: 34px; }
+        .pc-about { padding: 32px 20px; }
+        .pc-about h2 { font-size: 30px; }
+        .pc-steps { grid-template-columns: 1fr; }
+        .pc-step { border-right: none !important; border-bottom: 1.5px solid var(--ink) !important; padding: 24px 20px; }
+        .pc-step:last-child { border-bottom: none !important; }
+        .pc-faq h2 { font-size: 34px; }
+        .pc-faq .q h5 { font-size: 18px; }
+        .pc-final { padding: 44px 20px; }
+        .pc-final h2 { font-size: 36px; }
+        .pc-final p { font-size: 15px; }
+      }
     </style>
 
     <div class="pc-wrap">

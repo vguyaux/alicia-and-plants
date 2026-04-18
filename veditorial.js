@@ -477,6 +477,73 @@
         opacity: 0.6;
       }
       .ed-colo .loc { font-family: "DM Serif Display", serif; font-size: 18px; color: var(--palm-deep); }
+
+      /* ----- Responsive ----- */
+      @media (max-width: 860px) {
+        .ed-wrap { padding: 0 24px 60px; }
+        .ed-mast { grid-template-columns: 1fr; gap: 8px; text-align: center; padding: 16px 0 12px; }
+        .ed-mast .left, .ed-mast .right { text-align: center; }
+        .ed-mast .title { font-size: 36px; }
+        .ed-submast { flex-wrap: wrap; gap: 10px; font-size: 10px; padding: 10px 0; }
+        .ed-submast nav { flex-wrap: wrap; gap: 14px; }
+        .ed-hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0 56px; }
+        .ed-hero h1 { font-size: 64px; }
+        .ed-hero .dek { font-size: 17px; }
+        .ed-hero-right { height: 320px; }
+        .ed-hero-right .caption { display: none; }
+        .ed-evidence { grid-template-columns: 1fr; gap: 28px; padding: 56px 0; }
+        .ed-ev-photo { grid-template-columns: 90px 1fr; gap: 16px; align-items: start; }
+        .ed-ev-photo .ts { grid-row: 1; align-self: center; }
+        .ed-ev-photo .cap { grid-column: 1 / -1; font-size: 15px; }
+        .ed-pullquote { grid-template-columns: 1fr; gap: 16px; padding: 48px 0; }
+        .ed-pullquote .side { display: none; }
+        .ed-pullquote blockquote { font-size: 28px; }
+        .ed-services, .ed-feature, .ed-how, .ed-faq { padding: 56px 0; }
+        .ed-sec-label { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
+        .ed-sec-label h2 { font-size: 34px; }
+        .ed-svc-list .ed-svc { grid-template-columns: 40px 1fr; grid-template-rows: auto auto auto; gap: 8px 14px; padding: 22px 0; }
+        .ed-svc .n { grid-column: 1; }
+        .ed-svc h3 { grid-column: 2; font-size: 22px; }
+        .ed-svc .ic { display: none; }
+        .ed-svc p { grid-column: 1 / -1; font-size: 14px; }
+        .ed-svc .price { grid-column: 1 / -1; text-align: left; }
+        .ed-svc .price strong { display: inline; margin-left: 6px; }
+        .ed-feature { grid-template-columns: 1fr; gap: 36px; }
+        .ed-feature h2 { font-size: 48px; }
+        .ed-feature .col-text p:first-of-type::first-letter { font-size: 48px; padding: 4px 10px 0 0; }
+        .ed-spec-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .ed-how-grid { grid-template-columns: 1fr 1fr; }
+        .ed-how-step { border-bottom: 1px solid var(--ink); padding: 30px 20px; }
+        .ed-how-step:nth-child(2n) { border-right: none; }
+        .ed-how-step:nth-last-child(-n+2) { border-bottom: none; }
+        .ed-how-step .n { font-size: 56px; }
+        .ed-faq { grid-template-columns: 1fr; gap: 24px; }
+        .ed-faq h2 { font-size: 44px; }
+        .ed-faq-list .row { grid-template-columns: 40px 1fr; gap: 14px; padding: 20px 0; }
+        .ed-close { padding: 72px 0 48px; }
+        .ed-close .big { font-size: 72px; }
+        .ed-close .dek { font-size: 17px; }
+      }
+      @media (max-width: 540px) {
+        .ed-wrap { padding: 0 18px 48px; }
+        .ed-mast .title { font-size: 28px; }
+        .ed-submast nav { gap: 10px; font-size: 9px; letter-spacing: 0.18em; }
+        .ed-hero h1 { font-size: 44px; }
+        .ed-hero-right { height: 240px; }
+        .ed-pullquote blockquote { font-size: 22px; }
+        .ed-pullquote blockquote::before, .ed-pullquote blockquote::after { font-size: 38px; vertical-align: -10px; }
+        .ed-sec-label h2 { font-size: 26px; }
+        .ed-svc h3 { font-size: 19px; }
+        .ed-feature h2 { font-size: 36px; }
+        .ed-feature .col-text p { font-size: 15px; }
+        .ed-spec-grid { grid-template-columns: repeat(2, 1fr); }
+        .ed-how-grid { grid-template-columns: 1fr; }
+        .ed-how-step { border-right: none !important; }
+        .ed-how-step:last-child { border-bottom: none; }
+        .ed-faq h2 { font-size: 34px; }
+        .ed-faq-list h5 { font-size: 18px; }
+        .ed-close .big { font-size: 48px; }
+      }
     </style>
 
     <div class="ed-wrap">

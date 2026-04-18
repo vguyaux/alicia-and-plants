@@ -548,6 +548,45 @@
         font-size: 20px; color: var(--palm-deep);
       }
       .fj-foot .small { font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; text-transform: uppercase; }
+
+      /* ----- Responsive ----- */
+      @media (max-width: 860px) {
+        .fj-wrap { padding: 24px 22px 60px; }
+        .fj-nav { flex-wrap: wrap; gap: 12px; padding-bottom: 14px; }
+        .fj-nav ul { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; gap: 16px; font-size: 20px; }
+        .fj-hero { grid-template-columns: 1fr; gap: 28px; padding: 12px 0 40px; }
+        .fj-hero h1 { font-size: 60px; line-height: 1; }
+        .fj-hero-right { order: -1; }
+        .fj-evidence { grid-template-columns: 1fr !important; gap: 24px !important; padding: 32px 20px !important; }
+        .fj-photo-strip { grid-template-columns: repeat(2, 1fr) !important; }
+        .fj-photo { transform: none !important; }
+        .fj-sec-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+        .fj-sec-head h2 { font-size: 40px; line-height: 1; }
+        .fj-svc-grid { grid-template-columns: 1fr 1fr !important; gap: 18px !important; }
+        .fj-map { grid-template-columns: 1fr !important; padding: 32px 20px !important; gap: 28px !important; }
+        .fj-map h2, .fj-map h3 { font-size: 32px !important; }
+        .fj-about { grid-template-columns: 1fr !important; padding: 36px 22px !important; gap: 28px !important; }
+        .fj-about h2 { font-size: 42px !important; }
+        .fj-checklist { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+        .fj-faq-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+        .fj-final { padding: 48px 22px !important; }
+        .fj-final h2, .fj-final > h2 { font-size: 56px !important; }
+      }
+      @media (max-width: 540px) {
+        .fj-wrap { padding: 18px 14px 48px; }
+        .fj-nav ul { gap: 12px; font-size: 18px; }
+        .fj-logo { font-size: 26px; }
+        .fj-nav .cta { font-size: 18px; padding: 6px 14px; }
+        .fj-date { font-size: 18px; flex-wrap: wrap; gap: 6px; }
+        .fj-hero h1 { font-size: 42px; }
+        .fj-photo-strip { grid-template-columns: 1fr !important; }
+        .fj-sec-head h2 { font-size: 30px; }
+        .fj-svc-grid { grid-template-columns: 1fr !important; }
+        .fj-about h2 { font-size: 32px !important; }
+        .fj-checklist { grid-template-columns: 1fr !important; }
+        .fj-final h2, .fj-final > h2 { font-size: 40px !important; }
+        .fj-foot { flex-direction: column; align-items: flex-start; font-size: 18px; }
+      }
     </style>
 
     <div class="fj-wrap">
